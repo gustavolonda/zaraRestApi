@@ -1,5 +1,6 @@
 package com.example.zara.Model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "brand")
-public class Brand extends BaseEntity{
+public class Brand extends BaseEntity  implements Serializable{
     //ID
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
