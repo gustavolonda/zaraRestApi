@@ -1,22 +1,35 @@
 
 package com.example.zara.Model;
-import java.sql.Timestamp;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 
 @MappedSuperclass
 public class BaseEntity {
     //Create Date
-    @Column( columnDefinition = "timestamp NULL")
-    public Timestamp createDate;
+    @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
+    public Date createDate;
     
     //Update Date
-    @Column( columnDefinition = "timestamp NULL")
-    private Timestamp updateDate;
+    @Column(name = "update_date")
+    @Temporal(TemporalType.DATE)
+    private Date updateDate;
     
     //Detele Date
-    @Column( columnDefinition = "timestamp NULL")
-    private Timestamp deteleDate;
+    @Column(name = "detele_date")
+    @Temporal(TemporalType.DATE)
+    private Date deteleDate;
+
+    @PrePersist
+    public void prePersist(){
+        createDate = new Date();
+    }
 }

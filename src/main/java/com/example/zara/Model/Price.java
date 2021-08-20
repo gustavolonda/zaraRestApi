@@ -1,6 +1,8 @@
 package com.example.zara.Model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,11 +16,14 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 @Getter
 @Setter
 @Entity
 @Table(name = "price")
-public class Price  extends BaseEntity{
+public class Price  extends BaseEntity  implements Serializable{
     //ID
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +31,14 @@ public class Price  extends BaseEntity{
     private Long priceList;
     
     //StartDate 
-    @Column(name = "start_date", columnDefinition = "timestamp NULL")
-    public Timestamp startDate;
+    @Column(name = "start_date")
+    @Temporal(TemporalType.DATE)
+    public Date startDate;
     
     //EndDate
-    @Column(name = "end_date", columnDefinition = "timestamp NULL")
-    public Timestamp endDate;
+    @Column(name = "end_date")
+    @Temporal(TemporalType.DATE)
+    public Date endDate;
     
     //Brand : foreign key
     @ManyToOne
