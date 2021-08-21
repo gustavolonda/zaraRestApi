@@ -31,12 +31,12 @@ public class Price  extends BaseEntity  implements Serializable{
     
     //StartDate 
     @Column(name = "start_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     public Date startDate;
     
     //EndDate
     @Column(name = "end_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     public Date endDate;
     
     //Brand : foreign key

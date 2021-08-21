@@ -15,17 +15,17 @@ import javax.persistence.TemporalType;
 public class BaseEntity {
     //Create Date
     @Column(name = "create_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     public Date createDate;
     
     //Update Date
     @Column(name = "update_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate;
     
     //Detele Date
     @Column(name = "detele_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deteleDate;
 
     @PrePersist
