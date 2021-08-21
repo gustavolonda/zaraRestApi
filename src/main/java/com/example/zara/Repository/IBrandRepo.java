@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 //*********************Brand Repository*******************//
 //********************************************************//
 @Repository
-public interface BrandRepo extends JpaRepository<Brand, Long>{
+public interface IBrandRepo extends JpaRepository<Brand, Long>{
     
 }

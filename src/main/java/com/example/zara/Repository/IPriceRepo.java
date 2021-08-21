@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 //*********************Price Repository*******************//
 //********************************************************//
 @Repository
-public interface PriceRepo extends JpaRepository<Price, Long> {
+public interface IPriceRepo extends JpaRepository<Price, Long> {
     
 }
