@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,6 +30,8 @@ public class Product  extends BaseEntity  implements Serializable{
     //Name
     @Column(name = "product_name")
     private String productName;
+    
+    @JsonIgnore
     @OneToMany(mappedBy="product")
     private Set<Price> priceList;
     
