@@ -1,7 +1,7 @@
 package com.example.zara.Model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +15,10 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.example.zara.Util.UtilString;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Getter
 @Setter
@@ -32,14 +32,14 @@ public class Price  extends BaseEntity  implements Serializable{
     private Long priceList;
     
     //StartDate 
-    @Column(name = "start_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    public Date startDate;
+    @Column(name = "start_date", columnDefinition = "TIMESTAMP")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = UtilString.FORMAT_DATE) 
+    public LocalDateTime startDate;
     
     //EndDate
-    @Column(name = "end_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    public Date endDate;
+    @Column(name = "end_date", columnDefinition = "TIMESTAMP")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = UtilString.FORMAT_DATE) 
+    public LocalDateTime endDate;
     
     //Brand : foreign key
     @ManyToOne

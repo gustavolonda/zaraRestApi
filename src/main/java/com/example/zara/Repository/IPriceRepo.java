@@ -1,5 +1,6 @@
 package com.example.zara.Repository;
 
+import java.time.LocalDateTime;
 import com.example.zara.Model.Price;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,6 @@ import org.springframework.stereotype.Repository;
 //********************************************************//
 @Repository
 public interface IPriceRepo extends JpaRepository<Price, Long> {
+    Price findFirstByStartDateLessThanEqualAndEndDateGreaterThanOrderByPriorityDescStartDate(LocalDateTime dateApplyPriceStart, LocalDateTime dateApplyPriceEnd);
     
 }
