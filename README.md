@@ -22,22 +22,29 @@
 #### 2. Data Used
 
 - Post: localhost:8080/api/brand
+    ```json
+
+        {
+	"       brandId":1,
+	"       brandName":"Zara Men"
+        }
+
+    ```
     
-    {
-	"brandId":1,
-	"brandName":"Zara Men"
-    }
 
 - Post: localhost:8080/api/product
+    ```json
+        {
+	        "productId": 35455,
+	        "productName":"Jersey de ochos"
+        }
+    ```
     
-    {
-	"productId": 35455,
-	"productName":"Jersey de ochos"
-    }
 
 - Post: localhost:8080/api/price/saveAll
-   
-    {"priceList":
+    
+    ```json
+        {"priceList":
                 [{
                     "startDate":"2020-06-14-00.00.00",
                     "endDate" :"2020-12-31-23.59.59",
@@ -47,7 +54,6 @@
                 "priority":0,
                 "price":35.5,
                 "curr":"EUR"
-
                 },					
                 {
                     "startDate":"2020-06-14-15.00.00",
@@ -86,7 +92,9 @@
 
                     ]
                 
-}
+        }
+    ```
+        
 - Get: localhost:8080/api/price/dateApplyPrice/2020-06-14-10.00.00/35455/1
         localhost:8080/api/price/dateApplyPrice/{Date}/{ProductID}/{BrandID}
 
