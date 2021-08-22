@@ -25,8 +25,8 @@
     ```json
 
         {
-	"       brandId":1,
-	"       brandName":"Zara Men"
+	        "brandId":1,
+	        "brandName":"Zara Men"
         }
 
     ```
