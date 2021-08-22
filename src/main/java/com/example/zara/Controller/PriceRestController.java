@@ -4,6 +4,7 @@ import java.util.List;
 import com.example.zara.Model.ErrorMessageResponse;
 import com.example.zara.Model.MessageResponse;
 import com.example.zara.Model.Price;
+import com.example.zara.Model.PriceAppliedResponse;
 import com.example.zara.Model.PriceRequest;
 import com.example.zara.Model.Response;
 import com.example.zara.Sevice.Price.IPriceService;
@@ -35,10 +36,12 @@ public class PriceRestController {
         List<Price> priceList = priceService.getAll();
         return new ResponseEntity<>(priceList,HttpStatus.OK);
     }
-    @GetMapping(value = "/dateApplyPrice/{dateApplyPrice}")
-    public ResponseEntity<Price> getAppliedPriceByDate(@PathVariable("dateApplyPrice") String dateApplyPrice ){
-        Price price = priceService.appliedPrice(dateApplyPrice);
-        return new ResponseEntity<>(price,HttpStatus.OK);
+    @GetMapping(value = "/dateApplyPrice/{dateApplyPrice}/{productId}/{brandId}")
+    public ResponseEntity<PriceAppliedResponse> getAppliedPriceByDate(@PathVariable("dateApplyPrice") String dateApplyPrice,
+                                                        @PathVariable("productId") long productId,
+                                                        @PathVariable("brandId") long brandId   ){
+        PriceAppliedResponse priceAppliedResponse = priceService.appliedPrice(dateApplyPrice, productId, brandId);
+        return new ResponseEntity<>(priceAppliedResponse,HttpStatus.OK);
     }
     
     @PostMapping

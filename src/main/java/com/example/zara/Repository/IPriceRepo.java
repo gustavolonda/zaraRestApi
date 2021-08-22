@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 //********************************************************//
 @Repository
 public interface IPriceRepo extends JpaRepository<Price, Long> {
-    Price findFirstByStartDateLessThanEqualAndEndDateGreaterThanOrderByPriorityDescStartDate(LocalDateTime dateApplyPriceStart, LocalDateTime dateApplyPriceEnd);
+    Price findFirstByStartDateLessThanEqualAndEndDateGreaterThanAndProductProductIdEqualsAndBrandBrandIdEqualsOrderByPriorityDescStartDate(LocalDateTime dateApplyPriceStart, LocalDateTime dateApplyPriceEnd, long productId, long brandId);
     
 }
