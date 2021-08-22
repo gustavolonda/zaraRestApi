@@ -22,19 +22,22 @@
 #### 2. Data Used
 
 - Post: localhost:8080/api/brand
+    
     {
 	"brandId":1,
 	"brandName":"Zara Men"
     }
 
 - Post: localhost:8080/api/product
+    
     {
 	"productId": 35455,
 	"productName":"Jersey de ochos"
     }
 
 - Post: localhost:8080/api/price/saveAll
-   {"priceList":
+   
+    {"priceList":
                 [{
                     "startDate":"2020-06-14-00.00.00",
                     "endDate" :"2020-12-31-23.59.59",
