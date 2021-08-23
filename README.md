@@ -22,6 +22,8 @@
 #### 2. Data Used
 
 - Post: localhost:8080/api/brand
+   
+    Json Body
     ```json
 
         {
@@ -33,6 +35,8 @@
     
 
 - Post: localhost:8080/api/product
+
+    Json Body
     ```json
         {
 	        "productId": 35455,
@@ -42,7 +46,8 @@
     
 
 - Post: localhost:8080/api/price/saveAll
-    
+   
+    Json Body
     ```json
         {"priceList":
                 [{
