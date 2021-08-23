@@ -21,7 +21,7 @@
 
 #### 2. Data Used
 
-- Post: localhost:8080/api/brand
+- Save Brand (Post: localhost:8080/api/brand) 
    
     Json Body
     ```json
@@ -34,7 +34,7 @@
     ```
     
 
-- Post: localhost:8080/api/product
+- Save Product (Post: localhost:8080/api/product) 
 
     Json Body
     ```json
@@ -45,7 +45,7 @@
     ```
     
 
-- Post: localhost:8080/api/price/saveAll
+- Save Price List (Post: localhost:8080/api/price/saveAll)
    
     Json Body
     ```json
@@ -100,7 +100,8 @@
         }
     ```
         
-- Get: localhost:8080/api/price/dateApplyPrice/2020-06-14-10.00.00/35455/1
+- Get the price that will be applied according to the date of application, product ID, brandID
+  (Get: localhost:8080/api/price/dateApplyPrice/2020-06-14-10.00.00/35455/1)
         localhost:8080/api/price/dateApplyPrice/{Date}/{ProductID}/{BrandID}
 
 
